@@ -35,7 +35,6 @@ namespace std
         static int[,] MatMul(int[,] first, int[,] second, int m1, int n1, int n2)
         {
             int[,] M = new int[m1, n2];
-            int element = 0;
             for (int i = 0; i < m1; i++)
             {
                 for (int j = 0; j < n1; j++)
