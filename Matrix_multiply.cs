@@ -2,7 +2,7 @@
 
 namespace std
 {
-    class fc
+    class MatrixMultiply
     {   
         static int[,] Input(int m, int n)
         {
