@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace std
 {
@@ -6,6 +6,7 @@ namespace std
     {   
         static int[,] Input(int m, int n)
         {
+            Console.Title = "Matrix Multiply";
             int[,] matrix = new int[m, n];
             for (int i = 0; i < m; i++)
             {   
@@ -16,9 +17,9 @@ namespace std
             }
             return matrix;
         }
-        static void Output(int[,] matrix, int m, int n)
+        static void Output(int[,] matrix, int m, int n, string str = "Generated Matrix:")
         {
-            Console.WriteLine("Generated Matrix:");
+            Console.WriteLine(str);
             for (int i = 0; i < m; i++)
             {
 
@@ -47,10 +48,10 @@ namespace std
             }
             return M;
         }
-      
-        public static void Main(string[] args)
+        
+        static void Mul()
         {
-            Console.Title = "MultyPly Matrix";
+            Console.Title = "Matrix Multiply";
             Console.WriteLine("Enter matrix1 rows:");
             int m1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter matrix1 cols:");
@@ -78,12 +79,43 @@ namespace std
                 //Output numbers
                 Output(matrix1, m1, n1);
                 Output(matrix2, m2, n2);
-                Console.ReadKey();
                 int[,] M = MatMul(matrix1, matrix2, m1, n1, n2);
-                Console.WriteLine("Your answer");
                 Console.WriteLine("--------------------------------");
-                Output(M, m1, n2);
+                Output(M, m1, n2, "Answer:");
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine("Need to clear screen? (y/n)");
+                Console.WriteLine("--------------------------------");
+                string res = Console.ReadLine();
+                switch (res)
+                {
+                    case "y":
+                        Console.Clear();
+                        break;
+                    case "n":
+                        break;
+                }
+
             }
+        }
+        public static void Main(string[] args)
+        {
+            bool Run = true;
+            while (Run)
+            { 
+                
+                Mul();
+                Console.WriteLine("Do you want to proceed? (y/n)");
+                string r = Console.ReadLine();
+                switch (r)
+                {
+                    case "y":
+                        break;
+                    case "n":
+                        Run = false;
+                        break;
+                }
+            }
+            
         }
     }
 }
