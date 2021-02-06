@@ -21,6 +21,7 @@ namespace Project
                 System.Threading.Thread.Sleep(mlsec);
                 Console.Write("\r" + bar);
             }
+            Console.Write("\n");
         }
 
         public static void Main(string[] args)
