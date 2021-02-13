@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace OOP
+namespace alg
 {
-    class Program
+    class MaxNum
     {
         
         static void Main(string[] args)
